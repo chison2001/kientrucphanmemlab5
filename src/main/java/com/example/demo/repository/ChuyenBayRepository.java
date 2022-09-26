@@ -11,7 +11,7 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String>{
 
 	// 1. Cho biết các chuyến bay đi Đà Lạt (DAD)
     @Query(value = "select * from chuyenbay where GaDen ='DaD'", nativeQuery = true)
-    public List<ChuyenBay> listCau1();
+    public List<ChuyenBay> listAllDAD();
 
     // 4. Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km.
     @Query(value = "select * from chuyenbay where dodai > 8000 and dodai < 10000", nativeQuery = true)
