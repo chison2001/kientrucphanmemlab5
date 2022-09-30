@@ -14,14 +14,15 @@ import com.example.demo.entity.ChuyenBay;
 import com.example.demo.service.ChuyenBayService;
 
 @RestController
-@RequestMapping("hangkhong")
+@RequestMapping("/hangkhong")
 public class HangKhongController {
 	@Autowired
 	private ChuyenBayService chuyenBayService;
 	
-	@GetMapping("DAD/all")
-	public ResponseEntity<List<ChuyenBay>> getAllDAD(){
+	@GetMapping("/DAD-all")
+	public List<ChuyenBay> getAllDAD(){
 		List<ChuyenBay> listChuyenBay = chuyenBayService.listAllDAD();
-		return new ResponseEntity<List<ChuyenBay>>(listChuyenBay, HttpStatus.OK);
+		System.out.println(listChuyenBay);
+		return listChuyenBay ;
 	}
 }
